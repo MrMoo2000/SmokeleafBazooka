@@ -19,6 +19,7 @@ namespace MRP_SmokeleafBazooka
 
             Cast_HeDiff_Area castHeDiffArea = new Cast_HeDiff_Area(map, base.def.projectile.explosionRadius, base.Position);
             castHeDiffArea.AddHediff(HediffDef.Named("MRP_Concentrated_SmokeleafHigh"), 1f, 1f);
+            castHeDiffArea.AddHediff(HediffDef.Named("SmokeleafHigh"), 1f, 1f);
             castHeDiffArea.AddHediff(HediffDef.Named("SmokeleafAddiction"), 1f, 0.15f); 
             castHeDiffArea.ApplyHediffToArea();
         }

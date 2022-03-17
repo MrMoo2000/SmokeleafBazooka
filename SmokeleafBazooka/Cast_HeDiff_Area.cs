@@ -36,16 +36,7 @@ namespace MRP_SmokeleafBazooka
                     Pawn pawn = thingList[j] as Pawn;
                     if (pawn != null && GenSight.LineOfSightToThing(pawn.Position, explosionSight, map))
                     {
-                        foreach (Tuple<HediffDef, float, float> tuple in hediffDefsToApply)
-                        {
-                            float rand = Rand.Value;
-                            if (rand <= tuple.Item3)
-                            {
-                                Hediff hediff = HediffMaker.MakeHediff(tuple.Item1, pawn);
-                                hediff.Severity = tuple.Item2;
-                                pawn.health.AddHediff(hediff);
-                            }
-                        }
+                        applyHediffDefToPawn(pawn);
                     }
                 }
             }
@@ -54,6 +45,19 @@ namespace MRP_SmokeleafBazooka
         public void AddHediff(HediffDef hediffDef,float severity, float chance)
         {
             hediffDefsToApply.Add(new Tuple<HediffDef, float, float>(hediffDef, severity, chance));
+        }
+        private void applyHediffDefToPawn(Pawn pawn)
+        {
+            foreach (Tuple<HediffDef, float, float> tuple in hediffDefsToApply)
+            {
+                float rand = Rand.Value;
+                if (rand <= tuple.Item3)
+                {
+                    Hediff hediff = HediffMaker.MakeHediff(tuple.Item1, pawn);
+                    hediff.Severity = tuple.Item2;
+                    pawn.health.AddHediff(hediff);
+                }
+            }
         }
     }
 }
