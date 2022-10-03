@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cast_HeDiff_Area.cs" />
+    <Compile Include="Cast_HeDiff_Area_SmokeleafBazooka.cs" />
     <Compile Include="Projectile_Bullet_SmokeleafBazooka.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

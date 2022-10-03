@@ -17,7 +17,7 @@ namespace MRP_SmokeleafBazooka
             
             GenExplosion.DoExplosion(base.Position, map, 0.5f, DamageDefOf.Bomb, base.launcher, 25, base.ArmorPenetration, null, base.equipmentDef, base.def, postExplosionSpawnThingDef: ThingDefOf.Filth_Ash, intendedTarget: intendedTarget.Thing, postExplosionSpawnChance: 0.2f, postExplosionSpawnThingCount: 1, applyDamageToExplosionCellsNeighbors: false, preExplosionSpawnThingDef: null, preExplosionSpawnChance: 0f, preExplosionSpawnThingCount: 1, chanceToStartFire: 0f);
 
-            Cast_HeDiff_Area castHeDiffArea = new Cast_HeDiff_Area(map, base.def.projectile.explosionRadius, base.Position);
+            Cast_HeDiff_Area_SmokeleafBazooka castHeDiffArea = new Cast_HeDiff_Area_SmokeleafBazooka(map, base.def.projectile.explosionRadius, base.Position);
             castHeDiffArea.AddHediff(HediffDef.Named("MRP_Concentrated_SmokeleafHigh"), 1f, 1f);
             castHeDiffArea.AddHediff(HediffDef.Named("SmokeleafHigh"), 1f, 1f);
             castHeDiffArea.AddHediff(HediffDef.Named("SmokeleafAddiction"), 1f, 0.15f); 

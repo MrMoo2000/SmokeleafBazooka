@@ -7,10 +7,10 @@ namespace MRP_SmokeleafBazooka
 {
     internal class Cast_HeDiff_Area
     {
-        private Map map;
-        private int PawnAffectedCellCount;
-        private IntVec3 position;
-        private List<Tuple<HediffDef, float, float>> hediffDefsToApply;
+        protected Map map;
+        protected int PawnAffectedCellCount;
+        protected IntVec3 position;
+        protected List<Tuple<HediffDef, float, float>> hediffDefsToApply;
         public Cast_HeDiff_Area(Map map, float radius, IntVec3 position) 
         {
             this.map = map;
@@ -46,7 +46,7 @@ namespace MRP_SmokeleafBazooka
         {
             hediffDefsToApply.Add(new Tuple<HediffDef, float, float>(hediffDef, severity, chance));
         }
-        private void applyHediffDefToPawn(Pawn pawn)
+        protected virtual void applyHediffDefToPawn(Pawn pawn)
         {
             foreach (Tuple<HediffDef, float, float> tuple in hediffDefsToApply)
             {
